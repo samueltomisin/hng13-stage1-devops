@@ -1,0 +1,43 @@
+2025-10-22 01:55:17 Project name: Todo-List-Dockerized-Flask-WebApp  Sanitized name: todo-list-dockerized-flask-webapp
+2025-10-22 01:55:17 Start deploy: project=Todo-List-Dockerized-Flask-WebApp host=ubuntu@34.229.12.77 branch=main
+2025-10-22 01:55:17 Cloning repository...
+Cloning into '/tmp/Todo-List-Dockerized-Flask-WebApp_20251022_015321'...
+2025-10-22 01:55:34 Deploy type: dockerfile
+2025-10-22 01:55:34 Testing SSH connectivity...
+remote_ok
+2025-10-22 01:55:37 SSH OK
+2025-10-22 01:55:37 Preparing remote environment (install docker & nginx if needed)...
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy InRelease
+Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease
+Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease
+Get:4 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+Get:5 http://security.ubuntu.com/ubuntu jammy-security/main amd64 c-n-f Metadata [13.9 kB]
+Fetched 143 kB in 1s (255 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+lsb-release is already the newest version (11.1.0ubuntu4).
+ca-certificates is already the newest version (20240203~22.04.1).
+curl is already the newest version (7.81.0-1ubuntu1.21).
+curl set to manually installed.
+gnupg is already the newest version (2.2.27-3ubuntu2.4).
+apt-transport-https is already the newest version (2.4.14).
+0 upgraded, 0 newly installed, 0 to remove and 31 not upgraded.
+Synchronizing state of nginx.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable nginx
+Docker version 28.2.2, build 28.2.2-0ubuntu1~22.04.1
+docker: unknown command: docker compose
+
+Run 'docker --help' for more information
+nginx version: nginx/1.18.0 (Ubuntu)
+2025-10-22 01:55:45 Remote prepared
+2025-10-22 01:55:45 Syncing project to remote (~/deploy_Todo-List-Dockerized-Flask-WebApp)...
+2025-10-22 01:55:50 Running remote deploy...
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.50/build?dockerfile=Dockerfile&t=todo-list-dockerized-flask-webapp%3Alatest&version=1": dial unix /var/run/docker.sock: connect: permission denied
+2025-10-22 01:55:53 ERROR: Remote deploy failed
+2025-10-22 01:55:53 - Exited with 50

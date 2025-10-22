@@ -1,0 +1,86 @@
+2025-10-22 01:15:39 Start deploy: project=Todo-List-Dockerized-Flask-WebApp host=ubuntu@34.229.12.77 branch=main
+2025-10-22 01:15:39 Cloning repository...
+Cloning into '/tmp/Todo-List-Dockerized-Flask-WebApp_20251022_011251'...
+2025-10-22 01:15:49 Deploy type: dockerfile
+2025-10-22 01:15:49 Testing SSH connectivity...
+remote_ok
+2025-10-22 01:15:53 SSH OK
+2025-10-22 01:15:53 Preparing remote environment (install docker & nginx if needed)...
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy InRelease
+Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease
+Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease
+Hit:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+lsb-release is already the newest version (11.1.0ubuntu4).
+lsb-release set to manually installed.
+ca-certificates is already the newest version (20240203~22.04.1).
+ca-certificates set to manually installed.
+gnupg is already the newest version (2.2.27-3ubuntu2.4).
+gnupg set to manually installed.
+The following additional packages will be installed:
+  libcurl4
+The following NEW packages will be installed:
+  apt-transport-https
+The following packages will be upgraded:
+  curl libcurl4
+2 upgraded, 1 newly installed, 0 to remove and 31 not upgraded.
+Need to get 486 kB of archives.
+After this operation, 170 kB of additional disk space will be used.
+Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 apt-transport-https all 2.4.14 [1510 B]
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 curl amd64 7.81.0-1ubuntu1.21 [194 kB]
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libcurl4 amd64 7.81.0-1ubuntu1.21 [290 kB]
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Fetched 486 kB in 0s (14.3 MB/s)
+Selecting previously unselected package apt-transport-https.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 66854 files and directories currently installed.)
+Preparing to unpack .../apt-transport-https_2.4.14_all.deb ...
+Unpacking apt-transport-https (2.4.14) ...
+Preparing to unpack .../curl_7.81.0-1ubuntu1.21_amd64.deb ...
+Unpacking curl (7.81.0-1ubuntu1.21) over (7.81.0-1ubuntu1.20) ...
+Preparing to unpack .../libcurl4_7.81.0-1ubuntu1.21_amd64.deb ...
+Unpacking libcurl4:amd64 (7.81.0-1ubuntu1.21) over (7.81.0-1ubuntu1.20) ...
+Setting up apt-transport-https (2.4.14) ...
+Setting up libcurl4:amd64 (7.81.0-1ubuntu1.21) ...
+Setting up curl (7.81.0-1ubuntu1.21) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.10) ...
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+Synchronizing state of nginx.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable nginx
+Docker version 28.2.2, build 28.2.2-0ubuntu1~22.04.1
+docker: unknown command: docker compose
+
+Run 'docker --help' for more information
+nginx version: nginx/1.18.0 (Ubuntu)
+2025-10-22 01:16:06 Remote prepared
+2025-10-22 01:16:06 Syncing project to remote (~/deploy_Todo-List-Dockerized-Flask-WebApp)...
+2025-10-22 01:16:12 Running remote deploy...
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+invalid argument "Todo-List-Dockerized-Flask-WebApp:latest" for "-t, --tag" flag: invalid reference format: repository name (library/Todo-List-Dockerized-Flask-WebApp) must be lowercase
+
+Usage:  docker build [OPTIONS] PATH | URL | -
+
+Run 'docker build --help' for more information
+2025-10-22 01:16:15 ERROR: Remote deploy failed
+2025-10-22 01:16:15 - Exited with 50

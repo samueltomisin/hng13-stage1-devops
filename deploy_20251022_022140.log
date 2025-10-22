@@ -1,0 +1,149 @@
+2025-10-22 02:23:24 Project name: Todo-List-Dockerized-Flask-WebApp  Sanitized name: todo-list-dockerized-flask-webapp
+2025-10-22 02:23:24 Start deploy: project=Todo-List-Dockerized-Flask-WebApp host=ubuntu@34.229.12.77 branch=main
+2025-10-22 02:23:24 Cloning repository...
+Cloning into '/tmp/Todo-List-Dockerized-Flask-WebApp_20251022_022140'...
+2025-10-22 02:23:30 Deploy type: dockerfile
+2025-10-22 02:23:30 Testing SSH connectivity...
+remote_ok
+2025-10-22 02:23:34 SSH OK
+2025-10-22 02:23:34 Preparing remote environment (install docker & nginx if needed)...
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy InRelease
+Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease
+Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease
+Hit:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+lsb-release is already the newest version (11.1.0ubuntu4).
+ca-certificates is already the newest version (20240203~22.04.1).
+curl is already the newest version (7.81.0-1ubuntu1.21).
+gnupg is already the newest version (2.2.27-3ubuntu2.4).
+apt-transport-https is already the newest version (2.4.14).
+0 upgraded, 0 newly installed, 0 to remove and 31 not upgraded.
+Synchronizing state of nginx.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable nginx
+Docker version 28.2.2, build 28.2.2-0ubuntu1~22.04.1
+docker: unknown command: docker compose
+
+Run 'docker --help' for more information
+nginx version: nginx/1.18.0 (Ubuntu)
+2025-10-22 02:23:41 Remote prepared
+2025-10-22 02:23:41 Syncing project to remote (~/deploy_Todo-List-Dockerized-Flask-WebApp)...
+2025-10-22 02:23:46 Running remote deploy...
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  1.264MB
+Step 1/11 : FROM python:3.8-slim-buster
+3.8-slim-buster: Pulling from library/python
+8b91b88d5577: Pulling fs layer
+824416e23423: Pulling fs layer
+8f777578c172: Pulling fs layer
+cbfea27109a8: Pulling fs layer
+276dfcf5deff: Pulling fs layer
+cbfea27109a8: Waiting
+276dfcf5deff: Waiting
+824416e23423: Verifying Checksum
+824416e23423: Download complete
+cbfea27109a8: Verifying Checksum
+cbfea27109a8: Download complete
+8f777578c172: Verifying Checksum
+8f777578c172: Download complete
+8b91b88d5577: Verifying Checksum
+8b91b88d5577: Download complete
+276dfcf5deff: Verifying Checksum
+276dfcf5deff: Download complete
+8b91b88d5577: Pull complete
+824416e23423: Pull complete
+8f777578c172: Pull complete
+cbfea27109a8: Pull complete
+276dfcf5deff: Pull complete
+Digest: sha256:8799b0564103a9f36cfb8a8e1c562e11a9a6f2e3bb214e2adc23982b36a04511
+Status: Downloaded newer image for python:3.8-slim-buster
+ ---> addd6962740a
+Step 2/11 : LABEL Maintainer_Name="Gbadebo Samuel" Maintainer_Email="samueltomisin31@gmail.com"
+ ---> Running in 1b1270da2d29
+ ---> Removed intermediate container 1b1270da2d29
+ ---> 64bfdaa42ea8
+Step 3/11 : WORKDIR /
+ ---> Running in 43c886f8cf2d
+ ---> Removed intermediate container 43c886f8cf2d
+ ---> f6765b9127d2
+Step 4/11 : ENV FLASK_APP=app.py
+ ---> Running in ac1cb497d4f7
+ ---> Removed intermediate container ac1cb497d4f7
+ ---> 006b85da574e
+Step 5/11 : ENV FLASK_ENV=development
+ ---> Running in 48f6ed4414dd
+ ---> Removed intermediate container 48f6ed4414dd
+ ---> 2e323097db3f
+Step 6/11 : COPY ./requirements.txt /requirements.txt
+ ---> 57cef9dae514
+Step 7/11 : RUN pip3 install -r requirements.txt
+ ---> Running in 3278a50d8310
+Collecting click==7.1.2
+  Downloading click-7.1.2-py2.py3-none-any.whl (82 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 82.8/82.8 kB 10.5 MB/s eta 0:00:00
+Collecting Flask==1.1.2
+  Downloading Flask-1.1.2-py2.py3-none-any.whl (94 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 94.6/94.6 kB 14.1 MB/s eta 0:00:00
+Collecting Flask-SQLAlchemy==2.5.1
+  Downloading Flask_SQLAlchemy-2.5.1-py2.py3-none-any.whl (17 kB)
+Collecting greenlet==1.0.0
+  Downloading greenlet-1.0.0-cp38-cp38-manylinux2010_x86_64.whl (165 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 165.7/165.7 kB 21.5 MB/s eta 0:00:00
+Collecting gunicorn==20.1.0
+  Downloading gunicorn-20.1.0-py3-none-any.whl (79 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.5/79.5 kB 11.7 MB/s eta 0:00:00
+Collecting itsdangerous==1.1.0
+  Downloading itsdangerous-1.1.0-py2.py3-none-any.whl (16 kB)
+Collecting Jinja2==2.11.3
+  Downloading Jinja2-2.11.3-py2.py3-none-any.whl (125 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 125.7/125.7 kB 16.9 MB/s eta 0:00:00
+Collecting MarkupSafe==1.1.1
+  Downloading MarkupSafe-1.1.1-cp38-cp38-manylinux2010_x86_64.whl (32 kB)
+Collecting SQLAlchemy==1.4.12
+  Downloading SQLAlchemy-1.4.12-cp38-cp38-manylinux2014_x86_64.whl (1.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 79.5 MB/s eta 0:00:00
+Collecting Werkzeug==1.0.1
+  Downloading Werkzeug-1.0.1-py2.py3-none-any.whl (298 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 298.6/298.6 kB 33.1 MB/s eta 0:00:00
+Requirement already satisfied: setuptools>=3.0 in /usr/local/lib/python3.8/site-packages (from gunicorn==20.1.0->-r requirements.txt (line 5)) (57.5.0)
+Installing collected packages: Werkzeug, MarkupSafe, itsdangerous, gunicorn, greenlet, click, SQLAlchemy, Jinja2, Flask, Flask-SQLAlchemy
+Successfully installed Flask-1.1.2 Flask-SQLAlchemy-2.5.1 Jinja2-2.11.3 MarkupSafe-1.1.1 SQLAlchemy-1.4.12 Werkzeug-1.0.1 click-7.1.2 greenlet-1.0.0 gunicorn-20.1.0 itsdangerous-1.1.0
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0m[91m
+[notice] A new release of pip is available: 23.0.1 -> 25.0.1
+[notice] To update, run: pip install --upgrade pip
+[0m ---> Removed intermediate container 3278a50d8310
+ ---> cbd55115a51e
+Step 8/11 : RUN mkdir app
+ ---> Running in 992bebb4ca7a
+ ---> Removed intermediate container 992bebb4ca7a
+ ---> 94b53d94043e
+Step 9/11 : WORKDIR /app
+ ---> Running in fe7a38fb8d14
+ ---> Removed intermediate container fe7a38fb8d14
+ ---> 596e0a421499
+Step 10/11 : COPY . .
+ ---> f5d58fd3939d
+Step 11/11 : CMD ["python", "app.py"]
+ ---> Running in 8556fcad5680
+ ---> Removed intermediate container 8556fcad5680
+ ---> 90c2e573c2d4
+Successfully built 90c2e573c2d4
+Successfully tagged todo-list-dockerized-flask-webapp:latest
+30bdb1ab8d4cee0b34accdd765e8618345b06dda7f3e71932cbac17bd9af2eaf
+2025-10-22 02:24:00 Configuring Nginx on remote...
+nginx: [warn] conflicting server name "_" on 0.0.0.0:80, ignored
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+2025-10-22 02:24:03 Validating deployment...
+NAMES                               STATUS         PORTS
+todo-list-dockerized-flask-webapp   Up 6 seconds   0.0.0.0:5002->5002/tcp, [::]:5002->5002/tcp
+2025-10-22 02:24:07 HTTP code from public endpoint: 200
+2025-10-22 02:24:07 Deployment looks successful.
+2025-10-22 02:24:07 Deployment finished. Logfile: deploy_20251022_022140.log
+2025-10-22 02:24:07 - Exited with 0
